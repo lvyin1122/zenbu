@@ -3,12 +3,15 @@ import 'dart:html';
 import 'package:zenbu/home_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zenbu/welcome_page.dart';
 
 // Enable dragging in Web mode
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
-  Set<PointerDeviceKind> get dragDevices =>
-      {PointerDeviceKind.touch, PointerDeviceKind.mouse};
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
 
 void main() => runApp(MyApp());
@@ -27,7 +30,8 @@ class _MyAppState extends State<MyApp> {
         scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeWidget(),
+      // home: HomeWidget(),
+      home: WelcomePage(),
       scrollBehavior: AppScrollBehavior(),
     );
   }
