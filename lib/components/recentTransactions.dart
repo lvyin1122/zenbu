@@ -1,4 +1,4 @@
-import 'package:zenbu/screens/allTransactions.dart';
+import 'package:zenbu/pages/allTransactions.dart';
 import 'package:zenbu/utilities/themeStyles.dart';
 import 'package:zenbu/widgets/transactionCard.dart';
 import 'package:flutter/material.dart';

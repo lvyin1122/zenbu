@@ -2,6 +2,11 @@ import 'package:zenbu/utilities/themeColors.dart';
 import 'package:flutter/material.dart';
 
 class ThemeStyles {
+  static TextStyle defaultText = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w600,
+    color: ThemeColors.black,
+  );
   static TextStyle primaryTitle = TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w600,

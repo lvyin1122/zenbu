@@ -17,7 +17,14 @@ class _CreditCardState extends State<CreditCard> {
         height: 216,
         width: 380,
         decoration: BoxDecoration(
-          color: ThemeColors.black,
+          gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                ThemeColors.secondary,
+                ThemeColors.primary,
+              ]),
+          // color: ThemeColors.black,
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Padding(

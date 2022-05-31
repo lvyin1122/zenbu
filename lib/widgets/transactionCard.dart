@@ -1,4 +1,4 @@
-import 'package:zenbu/screens/transacationPage.dart';
+import 'package:zenbu/pages/transacationPage.dart';
 import 'package:zenbu/utilities/themeColors.dart';
 import 'package:zenbu/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,8 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zenbu/screens/account.dart';
+import 'package:zenbu/screens/budget.dart';
+import 'package:zenbu/screens/explore.dart';
 import 'package:zenbu/screens/home.dart';
 import 'package:zenbu/screens/transfer.dart';
 import 'package:zenbu/utilities/themeColors.dart';
@@ -14,76 +18,65 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   int selectedIndex = 1;
+
   @override
   Widget build(BuildContext context) {
     List<Widget> widgetOptions = <Widget>[
       HomeScreen(),
-      TransferScreen(),
-      HomeScreen(),
+      BudgetScreen(),
+      ExploreScreen(),
       AccountScreen(),
+      TransferScreen(),
     ];
-    void onTabTapped(index) {
-      setState(() {
-        selectedIndex = index;
-      });
-    }
 
     return Scaffold(
-      body: widgetOptions.elementAt(selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        elevation: 0,
-        onTap: onTabTapped,
-        currentIndex: selectedIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/home-icon.svg',
-              color: Colors.grey,
-            ),
-            activeIcon: SvgPicture.asset(
-              'assets/home-icon.svg',
-              color: Colors.black,
-            ),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
+        body: widgetOptions.elementAt(selectedIndex),
+        // Bottom navigation bar
+        bottomNavigationBar: getBottomNavBar(),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              onTabTapped(4);
+            },
+            child: SvgPicture.asset(
               'assets/transactions-icon.svg',
+              color: Colors.white,
             ),
-            activeIcon: SvgPicture.asset(
-              'assets/transactions-icon.svg',
-              color: Colors.black,
+            backgroundColor: ThemeColors.primary
+            //params
             ),
-            label: "Transactions",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/settings-icon.svg',
-              // color: selectedIndex == 2 ? Colors.black : Colors.grey,
-            ),
-            activeIcon: SvgPicture.asset(
-              'assets/settings-icon.svg',
-              color: Colors.black,
-            ),
-            label: "Settings",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/smiley-icon.svg',
-              // color: selectedIndex == 3 ? Colors.black : Colors.grey,
-            ),
-            activeIcon: SvgPicture.asset(
-              'assets/smiley-icon.svg',
-              color: Colors.black,
-            ),
-            label: "Account",
-          ),
-        ],
-      ),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.centerDocked);
+  }
+
+  Widget getBottomNavBar() {
+    List<IconData> iconItems = [
+      Ionicons.md_home,
+      Ionicons.md_stats,
+      Ionicons.md_compass,
+      Ionicons.md_person,
+    ];
+    return AnimatedBottomNavigationBar(
+      activeColor: ThemeColors.primary,
+      splashColor: ThemeColors.secondary,
+      inactiveColor: Colors.black.withOpacity(0.5),
+      icons: iconItems,
+      activeIndex: selectedIndex,
+      gapLocation: GapLocation.center,
+      notchSmoothness: NotchSmoothness.softEdge,
+      leftCornerRadius: 10,
+      iconSize: 25,
+      rightCornerRadius: 10,
+      onTap: (index) {
+        onTabTapped(index);
+      },
     );
   }
+
+  void onTabTapped(index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 }
+
+class ExporeScreen {}
