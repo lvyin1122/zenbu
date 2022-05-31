@@ -46,7 +46,7 @@ LineChartData mainData() {
           FlSpot(11, 4),
         ],
         isCurved: true,
-        color: ThemeColors.primary,
+        color: ThemeColors.tertiary,
         barWidth: 3,
         isStrokeCapRound: true,
         dotData: FlDotData(

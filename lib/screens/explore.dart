@@ -15,6 +15,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
+        decoration: BoxDecoration(
+            // color: Colors.grey.withOpacity(0.3),
+            ),
         child: Column(
           children: const [
             Appbar(title: "Explore"),

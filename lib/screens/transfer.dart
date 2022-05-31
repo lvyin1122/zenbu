@@ -18,7 +18,7 @@ class _TransferScreenState extends State<TransferScreen> {
         child: Column(
           children: [
             Appbar(
-              title: "Transfer",
+              title: "Transaction",
             ),
             TransferTo(),
           ],

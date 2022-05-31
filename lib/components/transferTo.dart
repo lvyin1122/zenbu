@@ -1,3 +1,4 @@
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zenbu/widgets/transferCard.dart';
 import 'package:flutter/material.dart';
 
@@ -12,17 +13,17 @@ class TransferTo extends StatefulWidget {
 
 class _TransferToState extends State<TransferTo> {
   List<Widget> cardList1 = [
-    TransferCard(title: "Mobile or email", icon: 'assets/settings-icon.svg'),
-    TransferCard(title: "Bank account", icon: 'assets/settings-icon.svg'),
-    TransferCard(title: "Own Zenbu accounts", icon: 'assets/settings-icon.svg'),
-    TransferCard(title: "FPS", icon: 'assets/settings-icon.svg'),
+    TransferCard(title: "Mobile or email", icon: Ionicons.ios_mail),
+    TransferCard(title: "Bank account", icon: Ionicons.md_card),
+    TransferCard(title: "Own Zenbu accounts", icon: Ionicons.md_infinite),
+    TransferCard(title: "FPS", icon: Ionicons.md_log_in),
   ];
 
   List<Widget> cardList2 = [
-    TransferCard(title: "Alvi", icon: 'assets/smiley-icon.svg'),
-    TransferCard(title: "Lisa", icon: 'assets/smiley-icon.svg'),
-    TransferCard(title: "Jack", icon: 'assets/smiley-icon.svg'),
-    TransferCard(title: "Sadman", icon: 'assets/smiley-icon.svg'),
+    TransferCard(title: "Alvi", icon: Ionicons.md_person),
+    TransferCard(title: "Lisa", icon: Ionicons.md_person),
+    TransferCard(title: "Jack", icon: Ionicons.md_person),
+    TransferCard(title: "Sadman", icon: Ionicons.md_person),
   ];
 
   @override
@@ -48,7 +49,7 @@ class _TransferToState extends State<TransferTo> {
               ),
             ),
             Container(
-              height: 120.0,
+              height: 130.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: cardList1,
@@ -68,7 +69,7 @@ class _TransferToState extends State<TransferTo> {
               ),
             ),
             Container(
-              height: 120.0,
+              height: 130.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: cardList2,

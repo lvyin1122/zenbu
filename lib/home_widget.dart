@@ -1,6 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:zenbu/screens/account.dart';
+import 'package:zenbu/screens/profile.dart';
 import 'package:zenbu/screens/budget.dart';
 import 'package:zenbu/screens/explore.dart';
 import 'package:zenbu/screens/home.dart';
@@ -25,7 +25,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       HomeScreen(),
       BudgetScreen(),
       ExploreScreen(),
-      AccountScreen(),
+      ProfileScreen(),
       TransferScreen(),
     ];
 
