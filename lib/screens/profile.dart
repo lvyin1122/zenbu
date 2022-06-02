@@ -5,6 +5,7 @@ import 'package:zenbu/utilities/themeColors.dart';
 import 'package:zenbu/utilities/themeStyles.dart';
 
 import '../components/appbar.dart';
+import '../pages/investments.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     buildAvatar(),
                     buildInfo(),
-                    buildCredits(size),
+                    buildCredits(size, context),
                     buildMenu(),
                   ],
                 ),
@@ -98,7 +99,7 @@ Widget buildInfo() => Padding(
       ),
     );
 
-Widget buildCredits(var size) => Padding(
+Widget buildCredits(var size, context) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,7 +134,7 @@ Widget buildCredits(var size) => Padding(
                   Container(
                     width: double.infinity,
                     child: Text(
-                      "Zenbu Credits",
+                      "Zen Points",
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 15, color: Colors.white),
                     ),
@@ -146,7 +147,7 @@ Widget buildCredits(var size) => Padding(
                           color: Colors.white,
                         ),
                         Text(
-                          "2,800",
+                          "17,000",
                           textAlign: TextAlign.right,
                           style: TextStyle(fontSize: 25, color: Colors.white),
                         ),
@@ -155,55 +156,61 @@ Widget buildCredits(var size) => Padding(
               ),
             ),
           ),
-          Container(
-            height: 100,
-            width: (size.width - 60) / 2,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    ThemeColors.secondary,
-                    ThemeColors.primary,
-                  ]),
-              color: ThemeColors.primary,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.8),
-                  spreadRadius: 1,
-                  blurRadius: 3,
-                  offset: Offset(1, 2), // changes position of shadow
-                ),
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(13),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    child: Text(
-                      "Credit Shop",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                    ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => InvestmentsPage()));
+            },
+            child: Container(
+              height: 100,
+              width: (size.width - 60) / 2,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      ThemeColors.secondary,
+                      ThemeColors.primary,
+                    ]),
+                color: ThemeColors.primary,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.8),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(1, 2), // changes position of shadow
                   ),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Ionicons.ios_swap,
-                          color: Colors.white,
-                        ),
-                        Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      ]),
                 ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(13),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        "My Investments",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Ionicons.md_stats,
+                            color: Colors.white,
+                          ),
+                          Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ]),
+                  ],
+                ),
               ),
             ),
           ),

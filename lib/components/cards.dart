@@ -40,11 +40,11 @@ class _CardsListState extends State<CardsList> {
         children: [
           Padding(
             padding: const EdgeInsets.only(
-                top: 32.0, left: 15.0, right: 15.0, bottom: 16.0),
+                top: 10.0, left: 15.0, right: 15.0, bottom: 0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Your Cards', style: ThemeStyles.primaryTitle),
+                Text('Bank Accounts', style: ThemeStyles.primaryTitle),
                 Text('See All', style: ThemeStyles.seeAll),
               ],
             ),
@@ -60,7 +60,7 @@ class _CardsListState extends State<CardsList> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 16.0),
+            padding: const EdgeInsets.only(top: 0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:zenbu/pages/investments.dart';
 
 class Appbar extends StatefulWidget {
   const Appbar({
@@ -21,18 +23,31 @@ class _AppbarState extends State<Appbar> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            widget.title,
-            style: const TextStyle(
-              fontSize: 25.0,
-              fontWeight: FontWeight.w800,
-            ),
+          Row(
+            children: [
+              Icon(Ionicons.md_menu),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                widget.title,
+                style: const TextStyle(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ],
           ),
           Row(
             children: [
               IconButton(
                 icon: SvgPicture.asset('assets/analytics-icon.svg'),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InvestmentsPage()));
+                },
               ),
               IconButton(
                 icon: SvgPicture.asset('assets/search-icon.svg'),

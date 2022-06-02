@@ -21,7 +21,7 @@ class _CreditCardState extends State<CreditCard> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                ThemeColors.secondary,
+                ThemeColors.tertiary,
                 ThemeColors.primary,
               ]),
           // color: ThemeColors.black,
@@ -41,7 +41,8 @@ class _CreditCardState extends State<CreditCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('5.720,30 €', style: ThemeStyles.cardMoney),
-                    SvgPicture.asset('assets/hide-icon.svg'),
+                    SvgPicture.asset('assets/hide-icon.svg',
+                        color: ThemeColors.lightGrey),
                   ],
                 ),
               ),
@@ -62,11 +63,15 @@ class _CreditCardState extends State<CreditCard> {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                          child: SvgPicture.asset('assets/card-dots.svg'),
+                          child: SvgPicture.asset(
+                            'assets/card-dots.svg',
+                            color: ThemeColors.lightGrey,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                          child: SvgPicture.asset('assets/card-dots.svg'),
+                          child: SvgPicture.asset('assets/card-dots.svg',
+                              color: ThemeColors.lightGrey),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 6.0),

@@ -1,4 +1,3 @@
-import 'package:zenbu/home_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:zenbu/welcome_page.dart';

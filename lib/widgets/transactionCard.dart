@@ -24,7 +24,7 @@ class _TransactionCardState extends State<TransactionCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: GestureDetector(
         onTap: () {
           Navigator.push(
@@ -41,7 +41,7 @@ class _TransactionCardState extends State<TransactionCard> {
           );
         },
         child: Container(
-          height: 62.0,
+          height: 60.0,
           width: 343.0,
           child: Column(
             children: [

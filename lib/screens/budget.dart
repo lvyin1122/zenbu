@@ -6,6 +6,7 @@ import 'package:zenbu/utilities/themeColors.dart';
 import '../components/appbar.dart';
 import '../jsons/budget_json.dart';
 import '../jsons/day_month.dart';
+import '../utilities/themeStyles.dart';
 import '../widgets/budget/chart.dart';
 
 class BudgetScreen extends StatefulWidget {
@@ -22,9 +23,19 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.05),
-      body: getBody(),
+    return SafeArea(
+      child: Column(
+        children: [
+          Appbar(title: "Budget Tracker"),
+          Expanded(
+            // backgroundColor: Colors.grey.withOpacity(0.05),
+            child: Container(
+              color: Colors.grey.withOpacity(0.05),
+              child: getBody(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -49,6 +60,102 @@ class _BudgetScreenState extends State<BudgetScreen> {
       child: Column(
         children: [
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            color: Colors.white,
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Monthly Budget",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+                      textAlign: TextAlign.left,
+                    ),
+                    Text("Spent",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800, fontSize: 18))
+                  ],
+                ),
+                SizedBox(
+                  height: 0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "\$ 3000",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple,
+                          ),
+                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(top: 3),
+                        //   child: Text(
+                        //     "70%",
+                        //     style: TextStyle(
+                        //         fontWeight: FontWeight.w500,
+                        //         fontSize: 13,
+                        //         color: Color(0xff67727d).withOpacity(0.6)),
+                        //   ),
+                        // ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 0),
+                      child: Text(
+                        "\$ 2486",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.purple,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
+                Container(
+                  width: double.infinity,
+                  child: Text(
+                    "75.78%",
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                        color: ThemeColors.tertiary.withOpacity(0.8),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      width: (size.width - 30),
+                      height: 4,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Color(0xff67727d).withOpacity(0.1)),
+                    ),
+                    Container(
+                      width: (size.width - 30) * 0.70,
+                      height: 4,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: ThemeColors.tertiary),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
             decoration: BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.01),
@@ -59,25 +166,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
             ]),
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: 60, right: 20, left: 20, bottom: 25),
+                  top: 20, right: 20, left: 20, bottom: 25),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Stats",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                      Icon(AntDesign.search1)
-                    ],
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
                   Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: List.generate(months.length, (index) {
