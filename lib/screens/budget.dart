@@ -263,7 +263,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             height: 10,
                           ),
                           Text(
-                            "\$2446.90",
+                            "\$2486.00",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 25,

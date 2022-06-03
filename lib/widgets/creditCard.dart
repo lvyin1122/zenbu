@@ -40,7 +40,7 @@ class _CreditCardState extends State<CreditCard> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('5.720,30 €', style: ThemeStyles.cardMoney),
+                    Text('\$ 5.720,30', style: ThemeStyles.cardMoney),
                     SvgPicture.asset('assets/hide-icon.svg',
                         color: ThemeColors.lightGrey),
                   ],
@@ -54,7 +54,7 @@ class _CreditCardState extends State<CreditCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Magent Black', style: ThemeStyles.cardDetails),
+                    Text('Hang Seng', style: ThemeStyles.cardDetails),
                     Row(
                       children: [
                         Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zenbu/pages/signup_guide.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -68,7 +69,10 @@ class SignupPage extends StatelessWidget {
                 child: MaterialButton(
                   minWidth: double.infinity,
                   height: 60,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => signupguide()));
+                  },
                   color: Color(0xff0095FF),
                   elevation: 0,
                   shape: RoundedRectangleBorder(

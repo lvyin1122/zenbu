@@ -17,7 +17,7 @@ class HomeWidget extends StatefulWidget {
 // Used for Bottom Navigation Bar
 
 class _HomeWidgetState extends State<HomeWidget> {
-  int selectedIndex = 1;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {

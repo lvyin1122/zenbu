@@ -1,10 +1,12 @@
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zenbu/components/recentTransactions.dart';
 import 'package:flutter/material.dart';
+import 'package:zenbu/pages/rewardPage.dart';
 import 'package:zenbu/utilities/themeColors.dart';
 import 'package:zenbu/utilities/themeStyles.dart';
 
 import '../components/appbar.dart';
+import '../pages/investment-options.dart';
 import '../pages/investments.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -104,62 +106,68 @@ Widget buildCredits(var size, context) => Padding(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            height: 100,
-            width: (size.width - 60) / 2,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    ThemeColors.primary,
-                    ThemeColors.tertiary,
-                  ]),
-              color: ThemeColors.primary,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.8),
-                  spreadRadius: 1,
-                  blurRadius: 3,
-                  offset: Offset(1, 2), // changes position of shadow
-                ),
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(13),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    child: Text(
-                      "Zen Points",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                    ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RewardPage()));
+            },
+            child: Container(
+              height: 100,
+              width: (size.width - 60) / 2,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      ThemeColors.primary,
+                      ThemeColors.tertiary,
+                    ]),
+                color: ThemeColors.primary,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.8),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(1, 2), // changes position of shadow
                   ),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Ionicons.md_albums,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          "17,000",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(fontSize: 25, color: Colors.white),
-                        ),
-                      ]),
                 ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(13),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        "Zen Points",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Ionicons.md_albums,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "17,000",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(fontSize: 25, color: Colors.white),
+                          ),
+                        ]),
+                  ],
+                ),
               ),
             ),
           ),
           GestureDetector(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => InvestmentsPage()));
+                  MaterialPageRoute(builder: (context) => InvestOptionsPage()));
             },
             child: Container(
               height: 100,

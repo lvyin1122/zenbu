@@ -82,12 +82,18 @@ Widget InvestPortfolio() => Container(
           SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Text("Invested Amount"), Text("Current Value")],
+            children: [
+              Text("Invested Amount", style: greyText),
+              Text("Current Value", style: greyText)
+            ],
           ),
           SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Text("\$ 200.00"), Text("\$ 310.23")],
+            children: [
+              Text("\$ 200.00", style: secondaryNumber),
+              Text("\$ 310.23", style: secondaryNumber)
+            ],
           ),
           SizedBox(height: 15),
           Row(
@@ -97,9 +103,9 @@ Widget InvestPortfolio() => Container(
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Overall Returns"),
+                  Text("Overall Returns", style: greyText),
                   SizedBox(height: 5),
-                  Text("\$ 110.23(+25.20%)")
+                  Text("\$ 110.23(+25.20%)", style: greenNumber)
                 ],
               ),
               SvgPicture.asset("assets/invest-stats.svg", height: 55)
@@ -157,12 +163,12 @@ buildTransactionCard() => Padding(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Instalment for Mutual\nfound"),
-                  Text("12:23 PM 2 APR, 2021"),
+                  Text("12:23 PM 2 APR, 2021", style: greyText),
                 ],
               )
             ],
           ),
-          Text("\$ 100"),
+          Text("\$ 100", style: primaryNumber),
         ],
       ),
     );
@@ -195,7 +201,7 @@ buildGuideCard() => Container(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Basic type of investments"),
+                Text("Basic type of investments", style: titleText),
                 Text("This is how you set your foot for 2020"),
               ]),
           buildOval("assets/images/user_1.png", 54.0, 54.0)
@@ -214,3 +220,16 @@ buildOval(image, width, height) => ClipOval(
         ),
       ),
     );
+
+TextStyle primaryNumber =
+    TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold);
+TextStyle secondaryNumber =
+    TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
+TextStyle greenNumber =
+    TextStyle(color: Colors.green, fontSize: 16, fontWeight: FontWeight.bold);
+
+TextStyle greyText = TextStyle(color: Colors.grey, fontSize: 14);
+TextStyle titleText = TextStyle(
+    color: Colors.black.withOpacity(0.5),
+    fontSize: 18,
+    fontWeight: FontWeight.bold);

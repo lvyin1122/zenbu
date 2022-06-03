@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zenbu/pages/investments.dart';
+import 'package:zenbu/welcome_page.dart';
 
 class Appbar extends StatefulWidget {
   const Appbar({
@@ -25,7 +26,13 @@ class _AppbarState extends State<Appbar> {
         children: [
           Row(
             children: [
-              Icon(Ionicons.md_menu),
+              IconButton(
+                icon: Icon(Ionicons.md_menu),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => WelcomePage()));
+                },
+              ),
               SizedBox(
                 width: 10,
               ),

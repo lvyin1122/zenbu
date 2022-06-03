@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zenbu/pages/investment-options.dart';
+import 'package:zenbu/pages/rewardPage.dart';
 import 'package:zenbu/welcome_page.dart';
 
 // Enable dragging in Web mode
@@ -29,6 +31,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // home: HomeWidget(),
       home: WelcomePage(),
+      // home: InvestOptionsPage(),
       scrollBehavior: AppScrollBehavior(),
     );
   }
