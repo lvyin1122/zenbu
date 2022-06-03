@@ -1,16 +1,25 @@
 # Zenbu
 
-A new Flutter project.
+A Flutter prototype built for PolyHack2022.
 
-## Getting Started
+Team: The Goal Diggers
 
-This project is a starting point for a Flutter application.
+Developers: Holden & Jack
 
-A few resources to get you started if this is your first Flutter project:
+>Zenbu, your first open banking app. Beyond just banking.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+- Add Flutter to your machine
+- Open this project folder with Terminal/CMD and run `flutter pub get`
+- Run `flutter run` to build and run
+```terminal
+flutter pub get
+flutter run
+```
+## Screenshots
+![Home](screenshots/screenshot1.png "Home Page")
+![Budget](screenshots/screenshot2.png "Budget Tracker")
+![Explore](screenshots/screenshot3.png "Explore")
+![Profile](screenshots/screenshot4.png "Home Page")
+![Points Shop](screenshots/screenshot5.png "Home Page")
+![Investments](screenshots/screenshot6.png "Home Page")
